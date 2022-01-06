@@ -8,7 +8,9 @@ function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
 
   const deleteFeedback = (id) => {
-    setFeedback(feedback.filter((item) => item.id !== id));
+    if (window.confirm('Delete?')) {
+      setFeedback(feedback.filter((item) => item.id !== id));
+    }
   };
 
   return (
